@@ -1,5 +1,6 @@
 package com.somasoma.harrymalex.somasoma;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -17,6 +18,7 @@ import android.view.View;
 
 import com.somasoma.harrymalex.somasoma.fragments.AttemptQuizesFragment;
 import com.somasoma.harrymalex.somasoma.fragments.QuizesFragment;
+import com.somasoma.harrymalex.somasoma.fragments.ReachUsFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -96,9 +98,18 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.attquizes) {
             fragment = new AttemptQuizesFragment();
 
-        } else if (id == R.id.nav_share) {
+        } else if (id == R.id.reachus) {
+            fragment = new ReachUsFragment();
 
-        } else if (id == R.id.nav_send) {
+        }else if (id == R.id.exit) {
+            ///inefficient way of exiting app
+            System.exit(0);
+
+            ///better way of exiting
+            Intent intent = new Intent(Intent.ACTION_MAIN);
+            intent.addCategory(Intent.CATEGORY_HOME);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
 
         }
 

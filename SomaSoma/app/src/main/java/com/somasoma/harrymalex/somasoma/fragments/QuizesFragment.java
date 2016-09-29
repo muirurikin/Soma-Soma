@@ -17,10 +17,13 @@ public class QuizesFragment  extends android.support.v4.app.Fragment{
 
     // The onCreateView method is called when Fragment should create its View object hierarchy,
     // either dynamically or via XML layout inflation.
+    View mview;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState) {
         // Defines the xml file for the fragment
-        return inflater.inflate(R.layout.fragment_quiz, parent, false);
+        mview = inflater.inflate(R.layout.fragment_quiz, parent, false);
+        ///return inflater.inflate(R.layout.fragment_quiz, parent, false);
+        return mview;
     }
 
     // This event is triggered soon after onCreateView().
